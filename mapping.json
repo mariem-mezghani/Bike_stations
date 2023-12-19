@@ -1,0 +1,36 @@
+{
+  "mappings": {
+    "properties": {
+      "address": {
+        "type": "text"
+      },
+      "available_bike_stands": {
+        "type": "integer"
+      },
+      "available_bikes": {
+        "type": "integer"
+      },
+      "banking": {
+        "type": "text"
+      },
+      "bike_stands": {
+        "type": "integer"
+      },
+      "contract_name": {
+        "type": "text"
+      },
+      "numbers": {
+        "type": "integer"
+      },
+      "position": {
+        "type": "geo_point"
+      },
+      "status": {
+        "type": "text"
+      },
+      "timestamps": {
+        "type": "text"
+      }
+    }
+  }
+}
