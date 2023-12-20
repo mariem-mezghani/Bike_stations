@@ -37,6 +37,26 @@ python3 producer.py
 ```
 4. Run the consumer:
 ```
-python3 pyspark_consumer.py
+./execute_consumer.sh
 ```
+
 ### Store Historical Data in a Hive Table
+1. Run the hadoop cluster:
+Navigate to the Hadoop directory and execute the following command:
+```
+./sbin/start-all.sh
+```
+3. Run the Hive service metastore:
+```
+hive --service metastore
+```
+4. Run the Kafka producer:
+```
+python3 producer.py
+```
+5. Run the consumer:
+```
+./execute_consumer_hive.sh
+```
+
+## Visualize results
