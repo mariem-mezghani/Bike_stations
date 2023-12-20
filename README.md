@@ -60,3 +60,11 @@ python3 producer.py
 ```
 
 ## Visualize results
+This Kibana generated map displays the available bikes geographically:
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/95c15708-c7a2-44a2-8176-167c0cd618bf)
+This is the generated table on elasticsearch:
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/b868199b-5adf-4789-8cd1-a0ff8dcd050d)
+This is the generated table on hive :
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/4f069e2f-9361-47c3-9996-b2a714a743d0)
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/0d68e0a3-1715-4244-ac96-002c4f15e5c3)
+
