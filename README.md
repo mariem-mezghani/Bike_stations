@@ -12,3 +12,31 @@ Welcome to the Bike Logistics and Real-time Analysis Project! This initiative es
 * kibana : 8.8.2
 
 ## Project Architecture
+ 
+## Run Project
+Before you begin, make sure to run Zookeeper and Kafka servers. To do so, navigate to the Kafka directory and execute the following commands:
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+```
+In this project, you have the option to store your data either in an Elasticsearch index or a Hive table.
+
+### Store Historical Data in an Elasticsearch index
+1. Start Elasticsearch:
+Navigate to the Elasticsearch directory and execute the following command:
+```
+./bin/elasticsearch
+```
+2. Create Elasticsearch index
+```
+python3 create_index.py
+```
+3. Run the Kafka producer:
+```
+python3 producer.py
+```
+4. Run the consumer:
+```
+python3 pyspark_consumer.py
+```
+### Store Historical Data in a Hive Table
