@@ -3,13 +3,7 @@ def create_index(client, index,mapping) -> None:
         client.indices.create(index=index,body=mapping)
     return
 
-
-
-
-
 if __name__ == "__main__":
-
-    
     from elasticsearch import Elasticsearch
     mapping = {
         "mappings": {
@@ -22,9 +16,7 @@ if __name__ == "__main__":
             "available_bikes": { "type": "integer" },
             "address": { "type": "text" },
             "status": { "type": "text" },
-            "position": {
-                "type": "geo_point"
-            },
+            "position": { "type": "geo_point" },
             "timestamps": { "type": "text" }
             }
         }
@@ -32,4 +24,3 @@ if __name__ == "__main__":
 
     es = Elasticsearch("http://localhost:9200")
     create_index(client=es, index="bike",mapping=mapping)
-    #response = es.indices.delete(index='bike', ignore=[400, 404])
