@@ -11,8 +11,9 @@ Welcome to the Bike Logistics and Real-time Analysis Project! This initiative es
 * Elasticsearch: 8.8.2
 * kibana : 8.8.2
 
-## Project Architecture
- 
+## Project Pipeline
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/f457da40-43ca-4661-960a-295cd10a67f3)
+
 ## Run Project
 Before you begin, make sure to run Zookeeper and Kafka servers. To do so, navigate to the Kafka directory and execute the following commands:
 ```
