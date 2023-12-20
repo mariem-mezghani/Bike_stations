@@ -1,25 +1,31 @@
+#Import Required Libraries
 import requests 
 from kafka import KafkaProducer
 import json
 import time
 from datetime import datetime
 
+#Kafka Producer Setup
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
+#API Configuration
 api_key = "54351b2f51a9a50475c86b4bd297f52c7fc98571"
 base_url = 'https://api.jcdecaux.com/vls/v1/'
 endpoint = 'stations'
 country_code = 'FR'
 
-while True:  # Infinite loop for continuous streaming, you may adjust this as needed
+while True:  
     try:
+        #Fetching Data from API
         url = f'{base_url}{endpoint}?country_code={country_code}&apiKey={api_key}'
         response = requests.get(url)
 
+        #Processing API Response
         if response.status_code == 200:
             data = response.json()
 
             for line in data:
+                #Formatting Data for Kafka
                 utcfromtimestamp = datetime.utcfromtimestamp(int(line['last_update'])/1000).strftime('%Y-%m-%d %H:%M:%S')
 
                 d = {
@@ -35,17 +41,18 @@ while True:  # Infinite loop for continuous streaming, you may adjust this as ne
                     'timestamps': utcfromtimestamp
                 }
 
+                #Sending Data to Kafka
                 producer.send('bike', value=d)
                 print(d)
-                time.sleep(2)
-                
-            
+                time.sleep(2)            
         else:
+            #Handling API Error
             print(f'Error: {response.status_code}')
             print(response.text)
 
+    #Handling Other Exceptions
     except Exception as e:
         print(f'An error occurred: {str(e)}')
 
-  
+    #Introducing Delay
     time.sleep(60)  
