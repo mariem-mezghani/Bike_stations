@@ -12,7 +12,8 @@ Welcome to the Bike Logistics and Real-time Analysis Project! This initiative es
 * kibana : 8.8.2
 
 ## Project Pipeline
-![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/f457da40-43ca-4661-960a-295cd10a67f3)
+![image](https://github.com/mariem-mezghani/Bike_stations/assets/118765518/ce40a4df-f413-4556-8e1a-5cdefec7a07b)
+
 
 ## Run Project
 Before you begin, make sure to run Zookeeper and Kafka servers. To do so, navigate to the Kafka directory and execute the following commands:
